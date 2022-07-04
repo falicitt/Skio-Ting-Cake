@@ -1,0 +1,242 @@
+
+/*# sourceMappingURL=styles.css.map*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Playfair+Display:wght@400;600&family=Roboto:wght@300&display=swap');
+
+html,
+body { 
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2rem;
+  text-align: center;
+
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+img {
+  max-width: 100%;
+  
+}
+
+ul {
+  padding: 0; 
+}
+
+li {
+  list-style: none;
+  align-items:center;
+}
+
+button {
+  
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border: solid 1px;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 3rem;
+}
+
+@media screen  and (min-width: 376px) {
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+  }}
+
+/*hero style*/
+.Hero {
+  padding-top: 5vh;
+  padding-bottom: 37vh;
+  background-image: url("./ben-rosett-nYugmV-SY6s-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__Text {
+  text-align: center;
+  margin-top: 10rem;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  background-color: white;
+}
+
+.hero__H1 {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2.5rem;
+  padding: 1rem 1rem 0 1rem;
+  
+}
+
+.hero__P {
+  font-size: 1.2rem;
+  padding-top: 0;
+}
+
+.check {
+  font-size: 1rem;
+  font-family: 'Playfair Display SC', serif;
+  padding: 1rem;
+}
+
+/*product section style*/
+.product__Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.product__Col {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.product__ColImg {
+  
+  padding: .5rem;
+  max-width: 360px;
+
+}
+
+.all__Cakes {
+  padding: 2rem 0;
+}
+
+/*about styles*/
+
+.about {
+  padding: 5rem;
+  background-color: #f7f8fa;
+  align-items: center;  
+}
+
+.learn__More {
+  font-family: 'Playfair Display', serif;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 560px) {
+  .about__Container {
+    padding-right: 3rem;
+    padding-left: 2rem;
+  }
+}
+
+@media screen and (min-width: 810px) {
+  .Hero {
+    padding-top: 8vh;
+  padding-bottom: 32vh;
+  }
+
+  .hero__H1 {
+    font-size: 3.5rem;
+  }
+
+  .hero__P {
+    font-size: 1.4rem;
+  }
+
+  .check {
+    font-size: 1.4rem;
+  }
+
+  .product__ColImg {
+    max-width: 380px;
+  }
+
+  .about {
+    display: flex;
+  }
+
+  .about__Container {
+    padding-left: 0;
+  }
+  
+  .about__Image {
+    width: 100rem;  
+  }
+  
+}
+
+@media screen and (min-width: 893px) {
+  .product__ColImg {
+    max-width: 430px;
+  }
+}
+
+/* footer style */
+.Footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #f9f4ec;
+  font-size: 0.9rem;
+  /* margin-top: 0;
+  margin-bottom: 0; */
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+}
+
+
+.socialmedia {
+background-color: #f9f4ec;
+list-style: none;
+display: flex;
+margin: 0 auto;
+justify-content: center;
+padding: 0;
+}
+
+.socialmedia li {
+padding: 1rem;
+}
+
+.CopyRight {
+font-size: 0.8rem;
+justify-content: space-between;
+padding: 0 2rem;
+}
+
+@media (max-width: 650px) {
+  .CopyRight {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .Footer li {
+    padding: 1rem;
+  }
+
+}
+
+@media screen  and (max-width: 376px) {
+  .Footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+}
