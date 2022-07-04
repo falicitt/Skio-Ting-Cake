@@ -4,6 +4,7 @@ import React from 'react'
 // import { fetchCakes } from '../actions'
 import { Routes, Route } from 'react-router-dom'
 
+import Header from './Header'
 import Cakes from './Cakes'
 import PopularCakes from './PopularCakes'
 import Footer from './Footer'
@@ -18,12 +19,7 @@ function App () {
   return (
     <>
       <div className='app'>
-        {/* <h1>Skio Ting Cake</h1> */}
-        {/* <ul>
-          {cakes.map(cake => (
-            <li key={cake.id}>{cake.name}</li>
-          ))}
-        </ul> */}
+        <Header />
         <Routes>
           <Route path='/' element={<PopularCakes />} />
           <Route path='/cakes' element={<Cakes />} />

@@ -72,6 +72,7 @@ function Cakes () {
 
   return (
     <>
+      <h2 className='all__Cakes'>ALL CAKES</h2>
       <button onClick={() => setSort('namePlus')}>Sort from A to Z</button>
       <button onClick={() => setSort('nameMinus')}>Sort from Z to A</button>
 
@@ -85,18 +86,22 @@ function Cakes () {
         </div>
       </form>
 
-    <ul>
+    <ul className='product__Container'>
       {searchResult?
         searchResult.map(cake =>
-          <li key={cake.id}>
-            <img src={cake.image} />
-            <p>{cake.name}</p>
+          <li key={cake.id} className='product'>
+            <div className='product__ColImg'>
+              <img src={cake.image} />
+            </div>
+            <p className='product__Col'>{cake.name}</p>
           </li>) :
       cakes?.map(cake =>
-        <li key={cake.id}>
-          <img src={cake.image} />
-          <p>{cake.name}</p>
-        </li>)}
+        <li key={cake.id} className='product'>
+            <div className='product__ColImg'>
+              <img src={cake.image} />
+            </div>
+            <p className='product__Col'>{cake.name}</p>
+          </li>)}
     </ul>
     </>
   )

@@ -64,6 +64,57 @@ button {
     justify-content: space-evenly;
   }}
 
+  /*Navbar styles*/
+  .Nav {
+    font-size: .9rem;
+    position:sticky;
+    top: 2px;
+    padding: 1px;
+    background-color: white;
+    
+  }
+  
+  .Nav__Desktop {
+    align-items: flex-end;
+    justify-content: space-evenly;
+    margin-right: 10rem;
+  }
+  
+  .Nav__Icon {
+    display: none;
+  }
+  
+  .Nav__Close {
+    display: none;
+  }
+  
+  .Title__Mobile {
+    display: none;
+  }
+  
+  .Title {
+    font-weight:600;
+    font-size: 1.4rem;
+    font-family: 'Playfair Display', serif;
+  
+  }
+  
+  .cart {
+    position: absolute;
+    top: 27px;
+    right: 80px;
+  }
+  
+  .auth {
+    position: absolute;
+    top: 27px;
+    right: 20px;
+  }
+  
+  .auth img {
+    max-width: 25px;
+  }
+
 /*hero style*/
 .Hero {
   padding-top: 5vh;
