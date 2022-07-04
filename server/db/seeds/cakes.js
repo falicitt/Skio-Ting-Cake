@@ -18,8 +18,20 @@ exports.seed = function (knex) {
           category_id: 1,
           featured: true,
         },
-        { id: 2, colName: 'rowValue2' },
-        { id: 3, colName: 'rowValue3' },
+        { id: 2, name: 'Chocolate Cake',
+        image: '/chocolate.jpg',
+        size: 6,
+        price: 68,
+        category_id: 1,
+        featured: true
+      },
+        { id: 3, name: 'strawberry Cake',
+        image: '/strawberry.jpg',
+        size: 6,
+        price: 68,
+        category_id: 1,
+        featured: false
+      },
       ])
     })
 }
