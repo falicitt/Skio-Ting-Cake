@@ -12,7 +12,7 @@ exports.seed = function (knex) {
         {
           id: 1,
           name: 'Durian Cake',
-          image: '../',
+          image: '/durian.jpg',
           size: 6,
           price: 68,
           category_id: 1,
