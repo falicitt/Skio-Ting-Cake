@@ -26,7 +26,7 @@ function App () {
         </ul> */}
         <Routes>
           <Route path='/' element={<PopularCakes />} />
-          <Route path='cakes' element={<Cakes />} />
+          <Route path='/cakes' element={<Cakes />} />
         </Routes>
         <Footer />
       </div>
