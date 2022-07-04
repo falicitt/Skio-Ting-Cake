@@ -26,7 +26,7 @@ function PopularCakes () {
       <h2>Most Popular Cakes</h2>
       <ul className='product__Container'>
         {cakes?.map(cake => {
-          if (cake.featured) {
+          if (cake.featured === 'true') {
             return (
               <li key={cake.id} className='product'>
                 <div className='product__ColImg'>
