@@ -12,26 +12,30 @@ exports.seed = function (knex) {
         {
           id: 1,
           name: 'Durian Cake',
-          image: '/durian.jpg',
+          image: '/small_durian.jpg',
           size: 6,
           price: 68,
           category_id: 1,
-          featured: true,
+          featured: 'true',
         },
-        { id: 2, name: 'Chocolate Cake',
-        image: '/chocolate.jpg',
-        size: 6,
-        price: 68,
-        category_id: 1,
-        featured: true
-      },
-        { id: 3, name: 'strawberry Cake',
-        image: '/strawberry.jpg',
-        size: 6,
-        price: 68,
-        category_id: 1,
-        featured: false
-      },
+        {
+          id: 2,
+          name: 'Chocolate Cake',
+          image: '/small_chocolate.jpg',
+          size: 6,
+          price: 68,
+          category_id: 1,
+          featured: 'true',
+        },
+        {
+          id: 3,
+          name: 'strawberry Cake',
+          image: '/small_strawberry.jpg',
+          size: 6,
+          price: 68,
+          category_id: 1,
+          featured: 'false',
+        },
       ])
     })
 }
