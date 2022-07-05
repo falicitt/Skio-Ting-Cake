@@ -22,7 +22,7 @@ function Cakes () {
   const [sort, setSort] = useState('')
 
   if (sort === 'namePlus') {
-    cakesCopy?.sort(function(a, b) {
+    cakesCopy.sort(function(a, b) {
       const nameA = a.name.toUpperCase(); // ignore upper and lowercase
       const nameB = b.name.toUpperCase(); // ignore upper and lowercase
       if (nameA < nameB) {
@@ -35,7 +35,7 @@ function Cakes () {
       return 0;
     }); 
   } else if (sort === 'nameMinus') {
-    cakesCopy?.sort(function(a, b) {
+    cakesCopy.sort(function(a, b) {
     const nameA = a.name.toUpperCase(); // ignore upper and lowercase
     const nameB = b.name.toUpperCase(); // ignore upper and lowercase
       if (nameA < nameB) {
