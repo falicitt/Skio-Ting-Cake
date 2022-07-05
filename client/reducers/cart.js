@@ -27,17 +27,22 @@ const cartReducer = (state = initialCart, action) => {
     case 'DELETE_FROM_CART':
       return state.filter((cake) => cake.id !== payload)
 
-    case 'INCREMENT_QUANTITY':
+    case 'INCREMENT_QUANTITY': {
        const item = state.find(cake => cake.id === payload)
        item.quantity++
-       return state
-       
+       return item
+    }  
 
-    case 'DECREMENT_QUANTITY':
+    case 'DECREMENT_QUANTITY': {
       const item = state.find((item) => item.id === payload)
-
-      return 
-
+      if (item.quantity === 1) {
+        return state.filter((cake) => cake.id !== payload)
+      } else {
+        item.quantity--
+        return item
+      }
+      
+    }
     default:
       return state
   }

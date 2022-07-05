@@ -9,6 +9,7 @@ import Cakes from './Cakes'
 import Home from './Home'
 import Footer from './Footer'
 import SingleCake from './SingleCake'
+import Cart from './Cart'
 
 function App () {
   // const cakes = useSelector(state => state.cakes)
@@ -25,6 +26,7 @@ function App () {
           <Route path='/' element={<Home />} />
           <Route path='/cakes' element={<Cakes />} />
           <Route path='/cakes/:id' element={<SingleCake />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
         <Footer />
       </div>
