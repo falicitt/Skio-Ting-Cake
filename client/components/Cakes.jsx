@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import { Link } from 'react-router-dom'
 import { getCakes } from '../apis/cakes'
 
 function Cakes () {
@@ -80,27 +80,30 @@ function Cakes () {
         <label htmlFor='search'>Search for a cake:</label>
         <input id='search' name='search' type='text' 
               onChange={handleChange} />
-        <div>
-          <button>Search!</button>
+          <button>Search</button>
           {searchResult? <button onClick={clearSearch}>Clear Search</button> : ''}
-        </div>
+        
       </form>
 
     <ul className='product__Container'>
       {searchResult?
         searchResult.map(cake =>
           <li key={cake.id} className='product'>
+            <Link to={`/cakes/${cake.id}`}>
             <div className='product__ColImg'>
               <img src={cake.image} />
             </div>
             <p className='product__Col'>{cake.name}</p>
+            </Link>
           </li>) :
       cakes?.map(cake =>
         <li key={cake.id} className='product'>
+          <Link to={`/cakes/${cake.id}`}>
             <div className='product__ColImg'>
               <img src={cake.image} />
             </div>
             <p className='product__Col'>{cake.name}</p>
+            </Link>
           </li>)}
     </ul>
     </>

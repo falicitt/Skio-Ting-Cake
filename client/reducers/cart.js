@@ -6,19 +6,18 @@ const cartReducer = (state = initialCart, action) => {
   switch (type) {
     case 'ADD_TO_CART': {
       // see if it exists
-      const exists = state.find((beer) => beer.id === payload.id)
+      const exists = state.find((cake) => cake.id === payload.id)
 
       if (exists) {
-        return state.map((beer) => {
-          if (beer.id === payload.id) {
+        return state.map((cake) => {
+          if (cake.id === payload.id) {
             // return it with increased quantity
-            beer.quantity++
-            return beer
-            // return {...beer, quantity: beer.quantity + 1}
+            cake.quantity++
+            return cake
+            
           }
-          // return beer
           else {
-            return beer
+            return cake
           }
         })
       } else {
@@ -26,9 +25,18 @@ const cartReducer = (state = initialCart, action) => {
       }
     }
     case 'DELETE_FROM_CART':
-      return state.filter((beer) => beer.id !== payload)
+      return state.filter((cake) => cake.id !== payload)
 
-    
+    case 'INCREMENT_QUANTITY':
+       const item = state.find(cake => cake.id === payload)
+       item.quantity++
+       return state
+       
+
+    case 'DECREMENT_QUANTITY':
+      const item = state.find((item) => item.id === payload)
+
+      return 
 
     default:
       return state
