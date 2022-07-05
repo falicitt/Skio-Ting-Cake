@@ -6,8 +6,9 @@ import { Routes, Route } from 'react-router-dom'
 
 import Header from './Header'
 import Cakes from './Cakes'
-import PopularCakes from './PopularCakes'
+import Home from './Home'
 import Footer from './Footer'
+import SingleCake from './SingleCake'
 
 function App () {
   // const cakes = useSelector(state => state.cakes)
@@ -21,8 +22,9 @@ function App () {
       <div className='app'>
         <Header />
         <Routes>
-          <Route path='/' element={<PopularCakes />} />
+          <Route path='/' element={<Home />} />
           <Route path='/cakes' element={<Cakes />} />
+          <Route path='/cakes/:id' element={<SingleCake />} />
         </Routes>
         <Footer />
       </div>

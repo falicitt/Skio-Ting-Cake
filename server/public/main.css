@@ -173,6 +173,77 @@ button {
   padding: 2rem 0;
 }
 
+/*styles for single product page*/
+.product__Detail {
+  text-align: center;
+}
+  
+.product__Image img {
+    max-width: 80%;
+    height: auto;
+    padding: 2rem 1rem 0 1rem;
+  }
+
+.product__Description {
+    padding: 0 2rem 4rem 2rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.product__Text {
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    padding: 1.5rem;
+}
+
+.product__Flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.addToCart {
+  width: 10rem;
+  height: 2.5rem;
+}
+
+.addToCart :hover {
+    font-size: 1.1rem;
+    pointer-events: visible;
+}
+
+@media screen and (min-width: 780px) {
+  .product__Detail {
+    display: flex;
+    /* padding-left: 2rem; */
+    align-items: center;
+  }
+
+  .product__Image {
+    /*padding: 1rem 1rem 3rem 2rem;*/
+    width: 150rem;
+  }
+
+  .product__Description {
+    padding: 2rem 5rem 3rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .product__Text {
+    padding: 1.5rem;
+}
+}
+
+@media screen and (min-width: 1000px) {
+  .product__Description {
+    padding: 4rem;
+  }
+
+  .product__Image {
+    padding: 3rem 2rem 3rem 4rem;
+  }
+}
+
+
 /*about styles*/
 
 .about {
