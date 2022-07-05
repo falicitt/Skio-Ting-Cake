@@ -2,7 +2,7 @@ import { SET_CAKES } from '../actions'
 
 const initialState = []
 
-const reducer = (state = initialState, action) => {
+const cakesReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_CAKES:
       return action.cakes
@@ -11,4 +11,4 @@ const reducer = (state = initialState, action) => {
   }
 }
 
-export default reducer
+export default cakesReducer

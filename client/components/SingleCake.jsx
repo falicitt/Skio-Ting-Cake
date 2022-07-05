@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { useParams , Link } from "react-router-dom";
-// import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { getCakes } from '../apis/cakes'
+import { addToCart } from '../actions/cart'
 
 function SingleCake () {
   const { id } = useParams()
 
   const [cake, setCake] = useState(null)
 
-  console.log(id)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     getCakes()
       .then(cakesArr => cakesArr.map(cake => {
-        if(cake.id === Number(id)) {
-        setCake(cake)
-        console.log('cake', cake)}
+        if(cake.id === Number(id)) {setCake(cake)}
       }))
       .catch(err => console.log(err))
   }, [])
@@ -40,8 +39,8 @@ function SingleCake () {
               <p>price: ${cake.price}</p>
             </div>
             <button
-              // onClick={() => dispatch(addToCart(product))}
-              // className={styles.addToCart}
+              onClick={() => dispatch(addToCart(cake.id, cake.name))}
+              className='addToCart'
             >
               Add to cart
             </button>

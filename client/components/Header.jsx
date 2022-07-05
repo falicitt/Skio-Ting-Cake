@@ -7,9 +7,9 @@ function Header () {
 //for shopping cart function
 const cart = useSelector((state) => state.cart)
 
-// const getItemsCount = () => {
-//   return cart.reduce((accumulator, item) => accumulator + item.quantity, 0)
-// }
+const getItemsCount = () => {
+  return cart.reduce((accumulator, item) => accumulator + item.quantity, 0)
+}
 
 //for toggle menu
 
@@ -48,7 +48,7 @@ return (
     <div className='cart'>
         {/* <Link href="/cart"> */}
           <a>Cart 
-            {/* ({getItemsCount()}) */}
+            ({getItemsCount()})
             </a>
         {/* </Link> */}
       </div>
@@ -60,8 +60,8 @@ return (
         ) : ( */}
           {/* <Link href="/api/auth/signin"> */}
             <a>Sign in</a>
-          {/* </Link> */}
-        )
+          {/* </Link> )*/}
+  
       </div>
     </div>
     </>
