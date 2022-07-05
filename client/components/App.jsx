@@ -4,9 +4,12 @@ import React from 'react'
 // import { fetchCakes } from '../actions'
 import { Routes, Route } from 'react-router-dom'
 
+import Header from './Header'
 import Cakes from './Cakes'
-import PopularCakes from './PopularCakes'
+import Home from './Home'
 import Footer from './Footer'
+import SingleCake from './SingleCake'
+import Cart from './Cart'
 
 function App () {
   // const cakes = useSelector(state => state.cakes)
@@ -18,15 +21,12 @@ function App () {
   return (
     <>
       <div className='app'>
-        {/* <h1>Skio Ting Cake</h1> */}
-        {/* <ul>
-          {cakes.map(cake => (
-            <li key={cake.id}>{cake.name}</li>
-          ))}
-        </ul> */}
+        <Header />
         <Routes>
-          <Route path='/' element={<PopularCakes />} />
+          <Route path='/' element={<Home />} />
           <Route path='/cakes' element={<Cakes />} />
+          <Route path='/cakes/:id' element={<SingleCake />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
         <Footer />
       </div>
