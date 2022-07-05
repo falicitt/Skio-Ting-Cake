@@ -10,13 +10,11 @@ import Home from './Home'
 import Footer from './Footer'
 import SingleCake from './SingleCake'
 import Cart from './Cart'
+import { cacheUser } from '../auth0-utils'
+import { useAuth0 } from '@auth0/auth0-react'
 
 function App () {
-  // const cakes = useSelector(state => state.cakes)
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //   dispatch(fetchCakes())
-  // }, [])
+  cacheUser(useAuth0)
 
   return (
     <>

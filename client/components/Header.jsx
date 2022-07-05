@@ -1,9 +1,33 @@
 import React, { useState } from 'react'
-// import { useContext } from 'react'
+
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import { useAuth0 } from '@auth0/auth0-react'
+import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
+
 function Header () {
+
+//for authentication
+const { logout, loginWithRedirect } = useAuth0()
+
+function handleLogoff(e) {
+  e.preventDefault()
+  logout()
+}
+
+function handleRegister(e) {
+  e.preventDefault()
+  loginWithRedirect({
+    redirectUri:`${window.location.origin}/register` 
+  })
+}
+
+function handleSignIn(e) {
+  e.preventDefault()
+  loginWithRedirect()
+}
+
 // for shopping cart function
   const cart = useSelector((state) => state.cart)
 
@@ -59,8 +83,24 @@ function Header () {
             // </Link>
           ) : ( */}
           {/* <Link href="/api/auth/signin"> */}
-          <a>Sign in</a>
+          {/* <a>Sign in</a> */}
           {/* </Link> ) */}
+          <IfAuthenticated>
+            {/* <Link to={"/profile"}> */}
+              {/* Profile */}
+            {/* </Link> */}
+            <a href="/" onClick={handleLogoff}>
+              Log off
+            </a>
+          </IfAuthenticated>
+          <IfNotAuthenticated>
+            {/* <a href="/" onClick={handleRegister}>
+              Register
+            </a> */}
+            <a href="/" onClick={handleSignIn}>
+              Sign in
+            </a>
+        </IfNotAuthenticated>
         </div>
       </div>
     </>
