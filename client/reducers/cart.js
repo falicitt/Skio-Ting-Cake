@@ -9,17 +9,12 @@ const cartReducer = (state = initialCart, action) => {
       const exists = state.find((cake) => cake.id === payload.id)
 
       if (exists) {
-        return state.map((cake) => {
-          if (cake.id === payload.id) {
-            // return it with increased quantity
-            cake.quantity++
-            return cake
-            
-          }
-          else {
-            return cake
-          }
-        })
+        exists.quantity++
+        // return state.map((cake) => {
+        //   if (cake.id === payload.id) {
+        //     // return it with increased quantity
+        //     cake.quantity = cake.quantity + 1
+        return [...state]
       } else {
         return [...state, { ...payload, quantity: 1 }]
       }
@@ -28,10 +23,11 @@ const cartReducer = (state = initialCart, action) => {
       return state.filter((cake) => cake.id !== payload)
 
     case 'INCREMENT_QUANTITY': {
-       const item = state.find(cake => cake.id === payload)
-       item.quantity++
-       return item
-    }  
+      const item = state.find((cake) => cake.id === payload)
+      // console.log('item', item)
+      item.quantity++
+      return [...state]
+    }
 
     case 'DECREMENT_QUANTITY': {
       const item = state.find((item) => item.id === payload)
@@ -39,9 +35,8 @@ const cartReducer = (state = initialCart, action) => {
         return state.filter((cake) => cake.id !== payload)
       } else {
         item.quantity--
-        return item
+        return [...state]
       }
-      
     }
     default:
       return state

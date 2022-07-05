@@ -1,16 +1,16 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { useDispatch } from 'react-redux'
 import { deleteFromCart, incrementQuantity, decrementQuantity } from '../actions/cart'
 
 function Cart () {
   const cart = useSelector((state) => state.cart)
+  console.log('cart', cart)
   const dispatch = useDispatch()
 
   const getTotalPrice = () => {
-    return cart.reduce(
-      (accumulator, item) =>
-        accumulator + item.quantity * item.data.attributes.price,
-      0
+    return cart.reduce((accumulator, item) =>
+      accumulator + item.quantity * item.price, 0
     )
   }
 
@@ -22,9 +22,7 @@ function Cart () {
         <>
           <div className='cart__Title'>
             <h1>Your Cart Items</h1>
-            <Link to={"/cakes"}>
-              <a>back to shopping</a>
-            </Link>
+            <Link to={'/cakes'}>back to shopping</Link>
           </div>
           <div className='header'>
             <div>Product</div>
@@ -39,7 +37,7 @@ function Cart () {
                 key={item.name}
                 className='item__Info'>
                 <div className='image'>
-                <img src={item.image} alt={item.name} />
+                  <img src={item.image} alt={item.name} />
                   {item.name}
                 </div>
 
@@ -56,7 +54,7 @@ function Cart () {
                   </button>
                 </div>
 
-                <div>$ {item.quantity * item.data.attributes.price}</div>
+                <div>$ {item.quantity * item.price}</div>
                 <div>
                   <button
                     className='button'
@@ -69,16 +67,15 @@ function Cart () {
             ))}
           </div>
           <div className='checkout__Session'>
-            <p>Total Price: $ {getTotalPrice()}</p>
-            <Link href="/shipping" passHref>
-              <button className='checkout__Button'>Check-Out</button>
-            </Link>
+            <p>Total Price: $ {cart && getTotalPrice()}</p>
+            {/* <Link href="/shipping" passHref> */}
+            <button className='checkout__Button'>Check-Out</button>
+            {/* </Link> */}
           </div>
         </>
       )}
     </div>
   )
-
 }
 
 export default Cart
