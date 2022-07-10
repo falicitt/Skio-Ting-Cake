@@ -1,12 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteFromCart, incrementQuantity, decrementQuantity } from '../actions/cart'
+
+import { placeOrder } from '../actions/orders'
 
 function Cart () {
   const cart = useSelector((state) => state.cart)
   console.log('cart', cart)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const getTotalPrice = () => {
     return cart.reduce((accumulator, item) =>
@@ -14,10 +17,15 @@ function Cart () {
     )
   }
 
+  function submitCart() {
+    dispatch(placeOrder(cart))
+    navigate('/order')
+  }
+
   return (
     <div className='container'>
       {cart.length === 0 ? (
-        <h1 className='empty'>Your Cart is Empty!</h1>
+        <h1 className='empty'>Your Cart is Empty! Start shopping <Link to="/cakes">here</Link></h1>
       ) : (
         <>
           <div className='cart__Title'>
@@ -69,7 +77,7 @@ function Cart () {
           <div className='checkout__Session'>
             <p>Total Price: $ {cart && getTotalPrice()}</p>
             {/* <Link href="/shipping" passHref> */}
-            <button className='checkout__Button'>Check-Out</button>
+            <button className='checkout__Button' onClick={submitCart}>Check-Out</button>
             {/* </Link> */}
           </div>
         </>

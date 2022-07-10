@@ -1,3 +1,7 @@
+
+// import { ADD_TO_CART, DELETE_FROM_CART, UPDATE_CART } from '../actions/cart'
+// import { PLACE_ORDER_SUCCESS } from '../actions/orders'
+
 const initialCart = []
 
 const cartReducer = (state = initialCart, action) => {
@@ -38,6 +42,11 @@ const cartReducer = (state = initialCart, action) => {
         return [...state]
       }
     }
+
+    case 'PLACE_ORDER_SUCCESS':
+      state = []
+      return state
+
     default:
       return state
   }

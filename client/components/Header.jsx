@@ -11,10 +11,10 @@ function Header () {
 //for authentication
 const { logout, loginWithRedirect } = useAuth0()
 
-function handleLogoff(e) {
-  e.preventDefault()
-  logout()
-}
+// function handleLogoff(e) {
+//   e.preventDefault()
+//   logout()
+// }
 
 function handleRegister(e) {
   e.preventDefault()
@@ -86,12 +86,10 @@ function handleSignIn(e) {
           {/* <a>Sign in</a> */}
           {/* </Link> ) */}
           <IfAuthenticated>
-            {/* <Link to={"/profile"}> */}
-              {/* Profile */}
-            {/* </Link> */}
-            <a href="/" onClick={handleLogoff}>
-              Log off
-            </a>
+            <Link to={"/profile"}> 
+              Profile
+             </Link>
+            
           </IfAuthenticated>
           <IfNotAuthenticated>
             {/* <a href="/" onClick={handleRegister}>
