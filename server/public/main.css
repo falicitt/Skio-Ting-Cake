@@ -405,6 +405,98 @@ font-size: 1.1rem;
   margin-top: 1rem;
 }
 
+/*styles for shipping section*/
+/*styles for sign in*/
+.profile { 
+  margin: 12vh 0 34vh 10vw;
+}
+
+.button {
+  width: 10rem;
+  height: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+/*styles for shipping*/
+
+.shipping {
+  font-size: .9rem;
+  margin: auto;
+  text-align: center;
+  width: 25rem;
+  padding-bottom: 2rem;
+}
+
+.steps {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+.shipping__Form {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+
+}
+
+.input {
+  width: 65%;
+  margin: .9rem;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: .9rem;
+}
+
+.contact {
+  padding-left: 2.5rem;
+}
+
+.date {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+.method {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 1.5rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  padding: 1rem;
+
+}
+
+.shipping a {
+  text-decoration: underline;
+}
+
+
+.pay__Button {
+width: 10rem;
+height: 2.5rem;
+}
+
+
+/*.shipping__Page {
+  display: flex;
+  flex-direction: row-reverse;
+}*/
+
+@media screen  and (min-width: 744px) {
+  .shipping__Page {
+      display: flex;
+      flex-direction: row-reverse;
+  }
+
+  .product {
+      width: 35%;
+  }
+  
+}
+
 /* footer style */
 .Footer {
   padding-top: 5rem;

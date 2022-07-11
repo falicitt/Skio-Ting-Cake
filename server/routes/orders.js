@@ -9,14 +9,13 @@ const checkJWT = require('../auth0')
 
 module.exports = router
 
-router.post('/', checkJWT, (req, res) => {
-  console.log('order route', req.body)
-  const {order} = req.body
+router.post('/', checkJWT, async (req, res) => {
+  console.log('order route', req.body[0])
+  
   const auth0Id = req.user?.sub
-
-  const newOrder = {...order, added_by_user: auth0Id}
-
-  db.addOrder(newOrder)
+  req.body[0].added_by_user = auth0Id
+  
+  db.addOrder(req.body)
     .then(() => {
       res.status(201).send('order created')
       return null

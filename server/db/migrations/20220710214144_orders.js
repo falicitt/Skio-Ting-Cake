@@ -4,9 +4,10 @@
  */
 exports.up = function(knex) {
   return knex.schema.createTable('orders', (table) => {
-    table.increments('id')
+    table.increments('id').primary()
     table.date('created_at')
     table.string('status')
+    table.string('add_by_user').references('user.auth0_id')
   })
 };
 
