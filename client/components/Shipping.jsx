@@ -15,7 +15,7 @@ function Shipping() {
   const navigate = useNavigate()
 
   const submitOrder = (e) => {
-    dispatch(placeOrder(cart))
+    dispatch(placeOrder(cart, token))
     navigate('/order')
   }
 

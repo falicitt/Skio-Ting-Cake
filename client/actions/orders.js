@@ -25,11 +25,11 @@ export function createOrder(cart) {
   }
 }
 
-export function placeOrder(cart) {
+export function placeOrder(cart, token) {
   return (dispatch) => {
     dispatch(createOrder(cart))
     dispatch(placeOrderPending())
-    return postOrder(cart)
+    return postOrder(cart, token)
       .then(() => {
         dispatch(placeOrderSuccess())
         return null
