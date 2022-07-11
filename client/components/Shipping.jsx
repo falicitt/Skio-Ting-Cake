@@ -43,15 +43,19 @@ function Shipping() {
                 placeholder="Phone Number"
               />
             </div>
+
             <div className='date'>
               <label>Pick Up Date</label>
               <input className='input' type="date" placeholder="Date" />
             </div>
+
             <div>
               <label>Pick Up Time</label>
               <input className='input' type="time" placeholder="time" />
             </div>
+
           </form>
+          
           <h3>Shipping Method</h3>
           <div className='method'>
             <div>
@@ -69,9 +73,8 @@ function Shipping() {
             <div>Cash</div>
           </div>
 
-          <button className='pay__Button' onClick={submitOrder}>
-            Place Order
-          </button>
+          <input type="submit" value="Place Order" className='pay__Button' onClick={submitOrder} />
+          </form>
 
           <p>
             <Link to={"/cart"}>

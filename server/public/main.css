@@ -215,12 +215,12 @@ button {
 @media screen and (min-width: 780px) {
   .product__Detail {
     display: flex;
-    /* padding-left: 2rem; */
+    padding-left: 2rem;
     align-items: center;
   }
 
   .product__Image {
-    /*padding: 1rem 1rem 3rem 2rem;*/
+    padding: 1rem 1rem 3rem 2rem;
     width: 150rem;
   }
 
@@ -237,7 +237,7 @@ button {
 @media screen and (min-width: 1000px) {
   .product__Description {
     padding: 4rem;
-  }
+  } */
 
   .product__Image {
     padding: 3rem 2rem 3rem 4rem;
@@ -491,9 +491,9 @@ height: 2.5rem;
       flex-direction: row-reverse;
   }
 
-  .product {
+  /* .product {
       width: 35%;
-  }
+  } */
   
 }
 
