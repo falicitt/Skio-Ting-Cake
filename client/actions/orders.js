@@ -18,16 +18,25 @@ export function placeOrderSuccess() {
   }
 }
 
-export function createOrder(cart) {
+export function createOrder(cart, orderDetails) {
   return {
     type: CREATE_ORDER,
-    payload: cart
+    // payload: [...cart]
+    payload: {
+      cakePurchased: [...cart],
+      phone: orderDetails.phone,
+      date: orderDetails.date,
+      time: orderDetails.time,
+      shipping: orderDetails.shipping,
+      payment: orderDetails.payment
+    
+    }
   }
 }
 
-export function placeOrder(cart, token) {
+export function placeOrder(cart, orderDetails, token) {
   return (dispatch) => {
-    dispatch(createOrder(cart))
+    dispatch(createOrder(cart, orderDetails))
     dispatch(placeOrderPending())
     return postOrder(cart, token)
       .then(() => {

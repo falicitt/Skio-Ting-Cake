@@ -24,13 +24,26 @@ export default function NewOrder() {
         /> */}
       </div>
       <h2>Order Confirmed</h2>
+      
+      {newOrder&&
+      <div className="receipt">
+        <p>Cake purchased:</p>
+        {newOrder.cakePurchased.map((item) => 
+        <li key={item.name}>
+          <span>{item.name}</span>
+          <span>{item.quantity}</span>
+          <span>{item.price}</span>
+        </li>)}
 
-      <h3>Cake purchased:</h3>
-      {newOrder.map((item) => 
-      <li key={item.name}>
-        <div>{item.name}</div>
-        <div>{item.quantity}</div>
-      </li>)}
+        <span>Contact number:</span>
+        <span>{newOrder.phone}</span>
+        <br></br>
+        <span>Pick up at:</span>
+        <span>{newOrder.date}{newOrder.time}</span>
+
+        <div>{newOrder.shipping}</div>
+        <div>{newOrder.payment}</div>
+      </div>}
 
       <p className='text'>
         Thank you for supporting local business with Skio Ting Cake. Now that

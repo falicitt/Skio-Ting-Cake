@@ -6,6 +6,7 @@ import loggedInUser from './loggedInUser'
 import newOrder from './newOrder'
 import errorMessage from './errorMessage'
 import waiting from './waiting'
+import Shipping from '../components/Shipping'
 
 export default combineReducers({
   // cakes: cakesReducer,
@@ -16,3 +17,5 @@ export default combineReducers({
   waiting,
 
 })
+
+
