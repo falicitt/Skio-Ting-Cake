@@ -10,8 +10,9 @@ import Home from './Home'
 import Footer from './Footer'
 import SingleCake from './SingleCake'
 import Cart from './Cart'
-import Profile from './Profile'
+import Shipping from './Shipping'
 import NewOrder from './NewOrder'
+import Profile from './Profile'
 
 import { cacheUser } from '../auth0-utils'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -28,8 +29,10 @@ function App () {
           <Route path='/cakes' element={<Cakes />} />
           <Route path='/cakes/:id' element={<SingleCake />} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/shipping' element={<Shipping />} />
           <Route path='/order' element={<NewOrder />} />
+
+          <Route path='/profile' element={<Profile />} />
         </Routes>
         <Footer />
       </div>

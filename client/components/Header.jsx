@@ -9,7 +9,7 @@ import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 function Header () {
 
 //for authentication
-const { logout, loginWithRedirect } = useAuth0()
+const { loginWithRedirect } = useAuth0()
 
 // function handleLogoff(e) {
 //   e.preventDefault()

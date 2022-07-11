@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteFromCart, incrementQuantity, decrementQuantity } from '../actions/cart'
 
-import { placeOrder } from '../actions/orders'
+
 
 function Cart () {
   const cart = useSelector((state) => state.cart)
@@ -18,8 +18,7 @@ function Cart () {
   }
 
   function submitCart() {
-    dispatch(placeOrder(cart))
-    navigate('/order')
+    navigate('/shipping')
   }
 
   return (
