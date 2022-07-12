@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { placeOrder } from '../actions/orders'
@@ -15,14 +15,24 @@ function Shipping() {
   //submit order 
   const cart = useSelector((state) => state.cart)
 
+  const [totalPrice, setTotalPrice] = useState(cart.reduce(
+    (accumulator, item) =>
+      accumulator + item.quantity * item.price,
+    0
+  ))
+  
+
   const [orderDetails, setOrderDetails] = 
   useState({
     phone: 0,
     date: '',
     time: '',
     shipping: '',
-    payment: ''
+    payment: '',
+    totalPrice: totalPrice
   })
+
+ 
 
   // console.log(orderDetails)
 

@@ -10,10 +10,12 @@ const checkJWT = require('../auth0')
 module.exports = router
 
 router.post('/', checkJWT, async (req, res) => {
-  console.log('order route', req.body[0])
+  console.log('order route', req.body)
   
   const auth0Id = req.user?.sub
-  req.body[0].added_by_user = auth0Id
+  req.body.added_by_user = auth0Id
+
+  console.log('auth0id', auth0Id)
   
   db.addOrder(req.body)
     .then(() => {

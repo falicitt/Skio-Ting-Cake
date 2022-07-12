@@ -21,31 +21,42 @@ export function placeOrderSuccess() {
 export function createOrder(cart, orderDetails) {
   return {
     type: CREATE_ORDER,
-    // payload: [...cart]
     payload: {
       cakePurchased: [...cart],
       phone: orderDetails.phone,
       date: orderDetails.date,
       time: orderDetails.time,
       shipping: orderDetails.shipping,
-      payment: orderDetails.payment
+      payment: orderDetails.payment,
+      totalPrice: orderDetails.totalPrice
     
     }
   }
 }
 
 export function placeOrder(cart, orderDetails, token) {
-  return (dispatch) => {
+  return ((dispatch) => {
     dispatch(createOrder(cart, orderDetails))
     dispatch(placeOrderPending())
-    return postOrder(cart, token)
-      .then(() => {
+
+    const order = {
+      cakePurchased: [...cart],
+      phone: orderDetails.phone,
+      date: orderDetails.date,
+      time: orderDetails.time,
+      shipping: orderDetails.shipping,
+      payment: orderDetails.payment,
+      totalPrice: orderDetails.totalPrice
+    
+    }
+    return postOrder(order, token)
+    .then(() => {
         dispatch(placeOrderSuccess())
         return null
       })
       .catch((err) => {
         const errMessage = err.response?.text || err.message
-        dispatch(showError(errMessage))
+        return dispatch(showError(errMessage))
       })
-  }
+    } )
 }

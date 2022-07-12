@@ -7,7 +7,13 @@ exports.up = function(knex) {
     table.increments('id').primary()
     table.date('created_at')
     table.string('status')
-    table.string('add_by_user').references('user.auth0_id')
+    table.string('add_by_user').references('users.auth0_id')
+    table.integer('amount')
+    table.integer('phone')
+    table.date('pickup_date')
+    table.time('pickup_time')
+    table.string('shipping')
+    table.string('payment')
   })
 };
 

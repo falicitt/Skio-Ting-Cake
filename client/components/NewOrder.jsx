@@ -32,14 +32,14 @@ export default function NewOrder() {
         <li key={item.name}>
           <span>{item.name}</span>
           <span>{item.quantity}</span>
-          <span>{item.price}</span>
+          <span>  ${item.price}</span>
         </li>)}
-
-        <span>Contact number:</span>
+        <p>Subtotal: ${newOrder.totalPrice} each</p>
+        <span>Contact number: </span>
         <span>{newOrder.phone}</span>
         <br></br>
         <span>Pick up at:</span>
-        <span>{newOrder.date}{newOrder.time}</span>
+        <span>{newOrder.date} {newOrder.time}</span>
 
         <div>{newOrder.shipping}</div>
         <div>{newOrder.payment}</div>

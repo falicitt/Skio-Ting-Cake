@@ -2,14 +2,19 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 function Product_checkout() {
+
   const cart = useSelector((state) => state.cart)
 
   const getTotalPrice = () => {
-    return cart.reduce(
+    
+    const totalPrice = cart.reduce(
       (accumulator, item) =>
         accumulator + item.quantity * item.price,
       0
     )
+
+    return totalPrice
+
   }
 
   return (
