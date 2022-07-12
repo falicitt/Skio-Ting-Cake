@@ -39,17 +39,17 @@ export function placeOrder(cart, orderDetails, token) {
     dispatch(createOrder(cart, orderDetails))
     dispatch(placeOrderPending())
 
-    const order = {
-      cakePurchased: [...cart],
-      phone: orderDetails.phone,
-      date: orderDetails.date,
-      time: orderDetails.time,
-      shipping: orderDetails.shipping,
-      payment: orderDetails.payment,
-      totalPrice: orderDetails.totalPrice
+    // const order = {
+    //   cakePurchased: [...cart],
+    //   phone: orderDetails.phone,
+    //   date: orderDetails.date,
+    //   time: orderDetails.time,
+    //   shipping: orderDetails.shipping,
+    //   payment: orderDetails.payment,
+    //   totalPrice: orderDetails.totalPrice
     
-    }
-    return postOrder(order, token)
+    // }
+    return postOrder(cart, orderDetails, token)
     .then(() => {
         dispatch(placeOrderSuccess())
         return null
