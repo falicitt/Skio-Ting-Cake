@@ -11,10 +11,6 @@ function Header () {
 //for authentication
 const { loginWithRedirect } = useAuth0()
 
-// function handleLogoff(e) {
-//   e.preventDefault()
-//   logout()
-// }
 
 function handleRegister(e) {
   e.preventDefault()
@@ -62,12 +58,12 @@ function handleSignIn(e) {
           <li>
             <Link to={'/cakes'}>CAKES</Link>
           </li>
-          {/* <li>
+          <li>
             <Link to={"/about"}>ABOUT</Link>
           </li>
           <li>
             <Link to={"/contact"}>CONTACT</Link>
-          </li> */}
+          </li>
         </ul>
 
         {/* shopping cart */}
@@ -77,14 +73,7 @@ function handleSignIn(e) {
           </Link>
         </div>
         <div className='auth'>
-          {/* {session ? ( */}
-          {/* // <Link href="/signin">
-              <a>Profile</a>
-            // </Link>
-          ) : ( */}
-          {/* <Link href="/api/auth/signin"> */}
-          {/* <a>Sign in</a> */}
-          {/* </Link> ) */}
+      
           <IfAuthenticated>
             <Link to={"/profile"}> 
               Profile
@@ -92,9 +81,6 @@ function handleSignIn(e) {
             
           </IfAuthenticated>
           <IfNotAuthenticated>
-            {/* <a href="/" onClick={handleRegister}>
-              Register
-            </a> */}
             <a href="/" onClick={handleSignIn}>
               Sign in
             </a>

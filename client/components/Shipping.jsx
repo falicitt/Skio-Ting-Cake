@@ -2,10 +2,19 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { placeOrder } from '../actions/orders'
+import { useAuth0 } from '@auth0/auth0-react'
 
 import Product_checkout from './Product_checkout'
 
 function Shipping() {
+
+  const { loginWithRedirect } = useAuth0()
+
+  function handleSignIn(e) {
+    e.preventDefault()
+    loginWithRedirect()
+  }
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -112,11 +121,11 @@ function Shipping() {
       :
       <div className='signin'>
         <p>Please sign in to make purchase.</p>
-        <div className='signin__Link'>
-          <Link to={"/"}>
-            Go to sign in page
-          </Link>
-        </div>
+      <div className='signin__Link'>
+        <a href="/" onClick={handleSignIn}>
+          Go to sign in page
+        </a> 
+      </div>
     </div> 
 }</>
 )}
