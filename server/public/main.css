@@ -116,6 +116,69 @@ button {
     max-width: 25px;
   }
 
+  @media (max-width: 650px) {
+
+    .Nav__Desktop {
+      display: none;
+    }
+  
+    .Nav__Mobile {
+      justify-content: flex-start;
+    }
+  
+    .Title__Mobile {
+      display: flex;
+      font-weight:600;
+      font-size: 1.1rem;
+      font-family: 'Playfair Display', serif;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+  
+    }
+    
+    .Nav__Icon {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+  
+    .Nav__Close {
+      display: none;
+    }
+  
+    .Nav__Open {
+      display: block;
+      text-align: center;
+    }
+  
+    .Nav__Open li {
+      padding-bottom: 1rem;
+      font-size: .8rem;
+    }
+  
+    .Nav__Open li :hover {
+      font-size: .9rem;
+    }
+  
+    .cart {
+      top: 14px;
+      right: 60px;
+  
+    }
+  
+    .auth {
+      top: 14px;
+      right: 10px;
+    }
+  
+    /* .CopyRight {
+      flex-direction: column;
+      text-align: center;
+    } */
+  
+  }
+
 /*hero style*/
 .Hero {
   padding-top: 5vh;
@@ -259,10 +322,17 @@ button {
   text-align: center;
 }
 
+
+
 @media screen and (min-width: 560px) {
   .about__Container {
     padding-right: 3rem;
     padding-left: 2rem;
+  }
+
+  .about__Image {
+    width: 80%; 
+    padding: 1rem 2rem;
   }
 }
 
@@ -584,8 +654,8 @@ font-size: 1.1rem;
   padding-bottom: 5rem;
   background-color: #f9f4ec;
   font-size: 0.9rem;
-  /* margin-top: 0;
-  margin-bottom: 0; */
+  margin-top: 0;
+  margin-bottom: 0;
   position: sticky;
   bottom: 0;
   text-align: center;

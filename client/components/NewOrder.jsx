@@ -16,12 +16,12 @@ export default function NewOrder() {
         Cart &gt; Detail &gt; <b>Order</b>
       </p>
       <div className='check'>
-        {/* <Image
+        <Image
           src="/circle-check-regular.svg"
           height={90}
           width={90}
           alt="circle-check"
-        /> */}
+        />
       </div>
       <h2>Order Confirmed</h2>
       

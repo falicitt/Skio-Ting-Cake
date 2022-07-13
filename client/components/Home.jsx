@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { getCakes } from '../apis/cakes'
 import { Link } from 'react-router-dom'
 
+import About from './About'
+
 function Home () {
   const [cakes, setCakes] = useState(null)
 
@@ -41,6 +43,8 @@ function Home () {
           }
         })}
       </ul>
+
+      <About />
     </>
   )
 }

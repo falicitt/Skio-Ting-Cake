@@ -66,6 +66,31 @@ function handleSignIn(e) {
           </li>
         </ul>
 
+      <div className='Title__Mobile'>
+          <Link to={"/"}>
+            SKIO TING CAKE
+          </Link>
+      </div>
+
+      <a className='Nav__Icon' onClick={ToggleClass}>
+        <i className="fas fa-align-justify"></i>
+      </a>
+
+        <ul className={isActive ? 'Nav__Close' : 'Nav__Open'}>
+        <li>
+            <Link to={'/'}>H O M E</Link>
+        </li>
+        <li>
+            <Link to={'/caks'}>C A K E S</Link>
+        </li>
+        <li>
+            <Link to={'/about'}>A B O U T</Link>
+        </li>
+        <li>
+            <Link to={'/contact'}>C O N T A C T</Link>
+        </li>
+      </ul>
+
         {/* shopping cart */}
         <div className='cart'>
           <Link to={'/cart'}>

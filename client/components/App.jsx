@@ -13,6 +13,8 @@ import Cart from './Cart'
 import Shipping from './Shipping'
 import NewOrder from './NewOrder'
 import Profile from './Profile'
+import About from './About'
+import Contact from './Contact'
 
 import { cacheUser } from '../auth0-utils'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -31,6 +33,8 @@ function App () {
           <Route path='/cart' element={<Cart />} />
           <Route path='/shipping' element={<Shipping />} />
           <Route path='/order' element={<NewOrder />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
 
           <Route path='/profile' element={<Profile />} />
         </Routes>
