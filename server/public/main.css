@@ -238,6 +238,12 @@ button {
 }
 
 /*styles for single product page*/
+
+.productPage {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
 .product__Detail {
   text-align: center;
 }

@@ -21,7 +21,7 @@ function handleRegister(e) {
 
 function handleSignIn(e) {
   e.preventDefault()
-  loginWithRedirect()
+  loginWithRedirect({redirectUri:`${window.location.origin}/`})
 }
 
 // for shopping cart function
@@ -81,7 +81,7 @@ function handleSignIn(e) {
             <Link to={'/'}>H O M E</Link>
         </li>
         <li>
-            <Link to={'/caks'}>C A K E S</Link>
+            <Link to={'/cakes'}>C A K E S</Link>
         </li>
         <li>
             <Link to={'/about'}>A B O U T</Link>
@@ -100,16 +100,15 @@ function handleSignIn(e) {
         <div className='auth'>
       
           <IfAuthenticated>
-            <Link to={"/profile"}> 
+            <Link to={'/profile'}> 
               Profile
-             </Link>
-            
+             </Link>         
           </IfAuthenticated>
           <IfNotAuthenticated>
             <a href="/" onClick={handleSignIn}>
               Sign in
             </a>
-        </IfNotAuthenticated>
+          </IfNotAuthenticated>
         </div>
       </div>
     </>

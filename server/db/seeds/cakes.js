@@ -20,13 +20,14 @@ exports.seed = function (knex) {
         },
         {
           id: 2,
-          name: 'Chocolate Cake',
-          image: '/small_chocolate.jpg',
+          name: 'Mango Cake',
+          image: '/mango3.jpg',
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'true',
+          featured: 'false',
         },
+
         {
           id: 3,
           name: 'strawberry Cake',
@@ -38,12 +39,12 @@ exports.seed = function (knex) {
         },
         {
           id: 4,
-          name: 'Vanilla Cake',
+          name: 'Taro Cake',
           image: '/small_purple.jpg',
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'false',
+          featured: 'true',
         },
         {
           id: 5,
@@ -52,7 +53,7 @@ exports.seed = function (knex) {
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'false',
+          featured: 'true',
         },
         {
           id: 6,
@@ -62,6 +63,34 @@ exports.seed = function (knex) {
           price: 68,
           category_id: 1,
           featured: 'false',
+        },
+        {
+          id: 7,
+          name: 'Vanilla Cake',
+          image: '/vanilla.jpg',
+          size: 6,
+          price: 68,
+          category_id: 1,
+          featured: 'false',
+        },
+        {
+          id: 8,
+          name: 'Chocolate Cake',
+          image: '/small_chocolate.jpg',
+          size: 6,
+          price: 68,
+          category_id: 1,
+          featured: 'true',
+        },
+
+        {
+          id: 9,
+          name: 'Cheese & Sea Salt Cream Cake',
+          image: '/seasalt.jpg',
+          size: 6,
+          price: 68,
+          category_id: 1,
+          featured: 'true',
         },
       ])
     })

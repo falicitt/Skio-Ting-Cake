@@ -73,39 +73,42 @@ function Cakes () {
   return (
     <>
       <h2 className='all__Cakes'>ALL CAKES</h2>
-      <button onClick={() => setSort('namePlus')}>Sort from A to Z</button>
-      <button onClick={() => setSort('nameMinus')}>Sort from Z to A</button>
+      <div className='productPage'>
+        <div>
+          <button onClick={() => setSort('namePlus')}>Sort from A to Z</button>
+          <button onClick={() => setSort('nameMinus')}>Sort from Z to A</button>
+        </div>
+        <form onSubmit={handleSearch}>
+          <label htmlFor='search'>Search for a cake:</label>
+          <input id='search' name='search' type='text' 
+                onChange={handleChange} />
+            <button>Search</button>
+            {searchResult? <button onClick={clearSearch}>Clear Search</button> : ''}
+          
+        </form>
+      </div>
 
-      <form onSubmit={handleSearch}>
-        <label htmlFor='search'>Search for a cake:</label>
-        <input id='search' name='search' type='text' 
-              onChange={handleChange} />
-          <button>Search</button>
-          {searchResult? <button onClick={clearSearch}>Clear Search</button> : ''}
-        
-      </form>
-
-    <ul className='product__Container'>
-      {searchResult?
-        searchResult.map(cake =>
+      <ul className='product__Container'>
+        {searchResult?
+          searchResult.map(cake =>
+            <li key={cake.id} className='product'>
+              <Link to={`/cakes/${cake.id}`}>
+              <div className='product__ColImg'>
+                <img src={cake.image} />
+              </div>
+              <p className='product__Col'>{cake.name}</p>
+              </Link>
+            </li>) :
+        cakes?.map(cake =>
           <li key={cake.id} className='product'>
             <Link to={`/cakes/${cake.id}`}>
-            <div className='product__ColImg'>
-              <img src={cake.image} />
-            </div>
-            <p className='product__Col'>{cake.name}</p>
-            </Link>
-          </li>) :
-      cakes?.map(cake =>
-        <li key={cake.id} className='product'>
-          <Link to={`/cakes/${cake.id}`}>
-            <div className='product__ColImg'>
-              <img src={cake.image} />
-            </div>
-            <p className='product__Col'>{cake.name}</p>
-            </Link>
-          </li>)}
-    </ul>
+              <div className='product__ColImg'>
+                <img src={cake.image} />
+              </div>
+              <p className='product__Col'>{cake.name}</p>
+              </Link>
+            </li>)}
+      </ul>
     </>
   )
 }
