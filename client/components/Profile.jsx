@@ -2,19 +2,20 @@ import React, { useState, useEffect } from "react"
 import { useAuth0 } from '@auth0/auth0-react'
 import { useSelector } from 'react-redux'
 import { getOrdersByUser } from '../apis/orders'
-import { Link } from 'react-router-dom'
-
-
 
 function Profile() {
 
-  const { logout } = useAuth0()
+  const { loginWithRedirect, logout } = useAuth0()
 
   function handleLogoff(e) {
     e.preventDefault()
     logout()
   }
 
+  function handleSignIn(e) {
+    e.preventDefault()
+    loginWithRedirect()
+  }
 
   const email = useSelector(state => state.loggedInUser.email)
   const auth0Id = useSelector(state => state.loggedInUser?.auth0Id)
@@ -32,31 +33,37 @@ function Profile() {
 
   return (
     <>
-      
+      {email?
 
-      <div className="profile">
-      <h1 className="profileTitle">My Orders</h1>
+        <div className="profile">
+          <h1 className="profileTitle">My Orders</h1>
   
-        <div className="email">You are logged in as: {email}</div>
-        <a href="/" onClick={handleLogoff}>
-        Log off
-      </a>
-      <ul className="mycards">
-      {orders?.map(order => 
+          <div className="email">You are logged in as: {email}</div>
+          <button className='checkout__Button' onClick={handleLogoff}>Log off</button>
+          <ul className="mycards">
+            {orders?.map(order =>
       
-        <li key={order.id} className='order'>
-          {/* <Link to={`/orders/`}> */}
-          <p>order number: 056{order.id} </p>
-          <p>total amount: ${order.amount}</p>
-          <p>{tf.format(new Date(order.created_at))}</p>
-          <p>order status: {order.status}</p>
-          {/* </Link> */}
-        </li>
+              <li key={order.id} className='order'>
+                {/* <Link to={`/orders/`}> */}
+                <p>Order number: 056{order.id} </p>
+                <p>Total amount: ${order.amount}</p>
+                <p>Order time: {tf.format(new Date(order.created_at))}</p>
+                <p>Order status: {order.status}</p>
+                {/* </Link> */}
+              </li>
        
-        )}
-      </ul>
-    </div>
-
+            )}
+          </ul>
+        </div> :
+        <div className='signin'>
+        <p>Please sign in to view your profile.</p>
+      <div className='signin__Link'>
+        <a href="/" onClick={handleSignIn}>
+          Go to sign in page
+        </a> 
+      </div>
+    </div> 
+      }
     </>
   )
 }

@@ -30,11 +30,10 @@ export default function NewOrder() {
         <p>Cake purchased:</p>
         {newOrder.cakePurchased.map((item) => 
         <li key={item.name}>
-          <span>{item.name}</span>
-          <span>{item.quantity}</span>
-          <span>  ${item.price}</span>
+          <span>{item.name}   quantity: {item.quantity}</span>
+          <span>  ${item.price} each</span>
         </li>)}
-        <p>Subtotal: ${newOrder.totalPrice} each</p>
+        <p>Subtotal: ${newOrder.totalPrice}</p>
         <span>Contact number: </span>
         <span>{newOrder.phone}</span>
         <br></br>
