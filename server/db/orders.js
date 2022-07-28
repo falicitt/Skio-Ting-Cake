@@ -29,17 +29,20 @@ function addOrder(orderRequest, db = connection) {
 
   const timestamp = new Date(Date.now())
   return db('orders')
-    .insert({
-      created_at: timestamp,
-      status: 'pending',
-      add_by_user: orderRequest.added_by_user,
-      amount: orderRequest.totalPrice,
-      phone: orderRequest.phone,
-      pickup_date: orderRequest.date,
-      pickup_time: orderRequest.time,
-      shipping: orderRequest.shipping,
-      payment: orderRequest.payment,
-    })
+    .insert(
+      {
+        created_at: timestamp,
+        status: 'pending',
+        add_by_user: orderRequest.added_by_user,
+        amount: orderRequest.totalPrice,
+        phone: orderRequest.phone,
+        pickup_date: orderRequest.date,
+        pickup_time: orderRequest.time,
+        shipping: orderRequest.shipping,
+        payment: orderRequest.payment,
+      },
+      'id'
+    )
     .then((idArr) => {
       const id = idArr[0]
       console.log('insert id return: ', id)
