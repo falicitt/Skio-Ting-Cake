@@ -51,7 +51,8 @@
     "knex": "^2.1.0",
     "pg": "^8.7.3",
     "sqlite3": "^5.0.8",
-    "superagent": "^6.1.0"
+    "superagent": "^6.1.0",
+    "typescript": "^4.7.4"
   },
   "devDependencies": {
     "@babel/core": "7.12.3",
