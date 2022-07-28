@@ -1,11 +1,14 @@
 {
-  "name": "boilerplate-fullstack",
+  "name": "Skio Ting Cake",
   "version": "2.0.0",
   "main": "server/index.js",
   "license": "MIT",
   "keywords": [
     "fullstack"
   ],
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "node server",
     "test": "jest",
