@@ -1,6 +1,6 @@
 import React from 'react'
 
-function About() {
+function About () {
   return (
     <section className='about'>
       <div className='about__Container'>

@@ -1,7 +1,4 @@
 import React from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
-
-// import { fetchCakes } from '../actions'
 import { Routes, Route } from 'react-router-dom'
 
 import Header from './Header'
@@ -33,8 +30,8 @@ function App () {
           <Route path='/cart' element={<Cart />} />
           <Route path='/shipping' element={<Shipping />} />
           <Route path='/order' element={<NewOrder />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
+          {/* <Route path='/about' element={<About />} /> */}
+          {/* <Route path='/contact' element={<Contact />} /> */}
 
           <Route path='/profile' element={<Profile />} />
         </Routes>
