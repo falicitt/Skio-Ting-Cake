@@ -16,6 +16,8 @@ function Cakes () {
       .catch(err => console.log(err))
   }, [])
 
+  console.log('cakes', cakes)
+
   //sort cakes
 
   

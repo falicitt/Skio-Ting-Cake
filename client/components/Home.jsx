@@ -9,9 +9,13 @@ function Home () {
 
   useEffect(() => {
     getCakes()
-      .then(cakesArr => setCakes(cakesArr))
+      .then(cakesArr => {
+        console.log('cakes array', cakesArr)
+        setCakes(cakesArr)
+      })
       .catch(err => console.log('getcakeserror', err))
-  }, [cakes])
+  }, [])
+  console.log('cakes', cakes)
 
   return (
     <>
@@ -29,8 +33,7 @@ function Home () {
       <ul className='product__Container'>
         {cakes !== null && cakes.map(cake => {
           if (cake.featured === 'true') {
-            return (
-              
+            return (      
               <li key={cake.id} className='product'>
                 <Link to={`/cakes/${cake.id}`}>
                 <div className='product__ColImg'>
@@ -39,8 +42,7 @@ function Home () {
                 <p className='product__Col'>{cake.name}</p>
                 </Link>
               </li>
-              )
-          }
+              )}
         })}
       </ul>
 
