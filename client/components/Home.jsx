@@ -11,7 +11,7 @@ function Home () {
     getCakes()
       .then(cakesArr => setCakes(cakesArr))
       .catch(err => console.log('getcakeserror', err))
-  }, [])
+  }, [cakes])
 
   return (
     <>
