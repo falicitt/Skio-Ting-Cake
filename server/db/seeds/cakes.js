@@ -16,7 +16,7 @@ exports.seed = function (knex) {
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'true',
+          featured: true,
         },
         {
           id: 2,
@@ -25,7 +25,7 @@ exports.seed = function (knex) {
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'false',
+          featured: false,
         },
 
         {
@@ -35,7 +35,7 @@ exports.seed = function (knex) {
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'true',
+          featured: true,
         },
         {
           id: 4,
@@ -44,7 +44,7 @@ exports.seed = function (knex) {
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'true',
+          featured: true,
         },
         {
           id: 5,
@@ -53,7 +53,7 @@ exports.seed = function (knex) {
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'true',
+          featured: true,
         },
         {
           id: 6,
@@ -62,7 +62,7 @@ exports.seed = function (knex) {
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'false',
+          featured: false,
         },
         {
           id: 7,
@@ -71,7 +71,7 @@ exports.seed = function (knex) {
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'false',
+          featured: false,
         },
         {
           id: 8,
@@ -80,7 +80,7 @@ exports.seed = function (knex) {
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'true',
+          featured: true,
         },
 
         {
@@ -90,7 +90,7 @@ exports.seed = function (knex) {
           size: 6,
           price: 68,
           category_id: 1,
-          featured: 'true',
+          featured: true,
         },
       ])
     })

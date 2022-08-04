@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getCakes } from '../apis/cakes'
 import { Link } from 'react-router-dom'
 
-// import About from './About'
+import About from './About'
 
 function Home () {
   const [cakes, setCakes] = useState(null)
@@ -32,25 +32,20 @@ function Home () {
       <h2>Most Popular Cakes</h2>
       <ul className='product__Container'>
         {cakes?.map(cake =>
-        // {
-          
-          // {
-            // cake.featured == 'true' &&
+            cake.featured?
             <li key={cake.id} className='product'>
               <Link to={`/cakes/${cake.id}`}>
                 <div className='product__ColImg'>
                   <img src={cake.image} alt={cake.name} />
                 </div>
               <p className='product__Col'>{cake.name}</p>
-              <p>{cake.featured}</p>
+              {/* <p>{cake.featured}</p> */}
               </Link>
-            </li>
-          // }
-              // }
+            </li>: '' 
         )}
       </ul>
 
-      {/* <About /> */}
+      <About />
     </>
   )
 }
