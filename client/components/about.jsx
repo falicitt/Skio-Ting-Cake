@@ -16,7 +16,7 @@ function About () {
       <div className='about__Image'>
         <img
           src="https://ucarecdn.com/002c5655-2c42-49fd-be65-2919d0ab0163/"
-          alt="Skio Ting's Photo"
+          alt="Skio Ting"
         />
       </div>
     </section>
