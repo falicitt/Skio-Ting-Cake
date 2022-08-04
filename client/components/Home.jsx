@@ -31,9 +31,9 @@ function Home () {
 
       <h2>Most Popular Cakes</h2>
       <ul className='product__Container'>
-        {cakes !== null && cakes.map(cake => {
-          if (cake.featured === 'true') {
-            return (      
+        {cakes && cakes.map(cake => {
+          <p>{cake.featured}</p>
+          cake.featured === 'true' &&      
               <li key={cake.id} className='product'>
                 <Link to={`/cakes/${cake.id}`}>
                 <div className='product__ColImg'>
@@ -42,8 +42,8 @@ function Home () {
                 <p className='product__Col'>{cake.name}</p>
                 </Link>
               </li>
-              )}
-        })}
+              }
+        )}
       </ul>
 
       {/* <About /> */}
