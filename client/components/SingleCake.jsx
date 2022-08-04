@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { getCakes } from '../apis/cakes'
 import { addToCart } from '../actions/cart'
@@ -10,6 +10,7 @@ function SingleCake () {
   const [cake, setCake] = useState(null)
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   useEffect(() => {
     getCakes()
@@ -29,15 +30,20 @@ function SingleCake () {
 
         <div className='product__Description'>
           <h4>{cake?.name}</h4>
-          {/* <p className='product__Text'>
-            {cake.description}
-          </p> */}
+          <div className='product__Text'>
+              <p>{cake.description}</p>
+              <p>{cake.caution}</p>
+          </div>
+            
           <div className='product__Flex'>
             <p>size: {cake.size} inches</p>
             <p>price: ${cake.price}</p>
           </div>
           <button
-            onClick={() => dispatch(addToCart(cake.id, cake.name, cake.image, cake.price))}
+              onClick={() => {
+                dispatch(addToCart(cake.id, cake.name, cake.image, cake.price))
+                navigate('/cart')
+              }}
             className='addToCart'
           >
             Add to cart

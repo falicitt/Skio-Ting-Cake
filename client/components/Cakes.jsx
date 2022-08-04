@@ -96,7 +96,8 @@ function Cakes () {
             <li key={cake.id} className='product'>
               <Link to={`/cakes/${cake.id}`}>
               <div className='product__ColImg'>
-                <img src={cake.image} />
+                <img src={cake.image} alt={cake.name} />
+                <p className='product__Col'>{cake.name}<div>VIEW CAKE  &gt;</div></p>
               </div>
               <p className='product__Col'>{cake.name}</p>
               </Link>
@@ -105,7 +106,8 @@ function Cakes () {
           <li key={cake.id} className='product'>
             <Link to={`/cakes/${cake.id}`}>
               <div className='product__ColImg'>
-                <img src={cake.image} />
+                <img src={cake.image} alt={cake.name} />
+                <p className='product__Col'>{cake.name}<div>VIEW CAKE  &gt;</div></p>
               </div>
               <p className='product__Col'>{cake.name}</p>
               </Link>

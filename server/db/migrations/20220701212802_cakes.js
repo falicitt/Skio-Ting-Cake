@@ -9,6 +9,8 @@ exports.up = function (knex) {
     table.string('image')
     table.integer('size')
     table.integer('price')
+    table.text('description')
+    table.text('caution')
     table.integer('category_id')
     table.boolean('featured')
   })

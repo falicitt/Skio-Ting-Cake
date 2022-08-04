@@ -64,7 +64,7 @@ function Cart () {
                 <div>$ {item.quantity * item.price}</div>
                 <div>
                   <button
-                    className='button'
+                    className='delete_button'
                     onClick={() => dispatch(deleteFromCart(item.id))}
                   >
                     x

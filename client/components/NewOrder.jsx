@@ -52,9 +52,9 @@ export default function NewOrder () {
       <Link to={'/'}>
         <button className='button__Back'>Back to shopping</button>
       </Link>
-      <p>
+      {/* <p>
         <a className='print'>Print receipt</a>
-      </p>
+      </p> */}
       
     </div>
   )
