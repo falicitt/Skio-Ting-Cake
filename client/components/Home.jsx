@@ -10,7 +10,7 @@ function Home () {
   useEffect(() => {
     getCakes()
       .then(cakesArr => setCakes(cakesArr))
-      .catch(err => console.log(err))
+      .catch(err => console.log('getcakeserror', err))
   }, [])
 
   return (
@@ -27,7 +27,7 @@ function Home () {
 
       <h2>Most Popular Cakes</h2>
       <ul className='product__Container'>
-        {cakes?.map(cake => {
+        {cakes !== null && cakes.map(cake => {
           if (cake.featured === 'true') {
             return (
               
