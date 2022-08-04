@@ -31,18 +31,22 @@ function Home () {
 
       <h2>Most Popular Cakes</h2>
       <ul className='product__Container'>
-        {cakes && cakes.map(cake => {
-          <p>{cake.featured}</p>
-          cake.featured === 'true' &&      
-              <li key={cake.id} className='product'>
-                <Link to={`/cakes/${cake.id}`}>
+        {cakes?.map(cake =>
+        // {
+          
+          // {
+            // cake.featured == 'true' &&
+            <li key={cake.id} className='product'>
+              <Link to={`/cakes/${cake.id}`}>
                 <div className='product__ColImg'>
                   <img src={cake.image} alt={cake.name} />
                 </div>
-                <p className='product__Col'>{cake.name}</p>
-                </Link>
-              </li>
-              }
+              <p className='product__Col'>{cake.name}</p>
+              <p>{cake.featured}</p>
+              </Link>
+            </li>
+          // }
+              // }
         )}
       </ul>
 
