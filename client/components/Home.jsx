@@ -10,12 +10,10 @@ function Home () {
   useEffect(() => {
     getCakes()
       .then(cakesArr => {
-        console.log('cakes array', cakesArr)
         setCakes(cakesArr)
       })
       .catch(err => console.log('getcakeserror', err))
   }, [])
-  console.log('cakes', cakes)
 
   return (
     <>

@@ -20,7 +20,7 @@ function Profile() {
   const email = useSelector(state => state.loggedInUser.email)
   const auth0Id = useSelector(state => state.loggedInUser?.auth0Id)
   
-  const [ orders, setOrders ] = useState([])
+  const [ orders, setOrders ] = useState(null)
 
   useEffect(() => {
     getOrdersByUser(auth0Id)
@@ -28,6 +28,7 @@ function Profile() {
         setOrders(ordersArry)
       })
   }, [auth0Id])
+  console.log('orders', orders)
 
   const tf = new Intl.DateTimeFormat('en-NZ')
 
@@ -36,10 +37,9 @@ function Profile() {
       {email?
 
         <div className="profile">
-          <h1 className="profileTitle">My Orders</h1>
-  
-          <div className="email">You are logged in as: {email}</div>
-          <button className='checkout__Button' onClick={handleLogoff}>Log off</button>
+          
+          <h1>My Orders</h1>
+          <div className="email">You are logged in as: {email}</div> 
           <ul className="mycards">
             {orders?.map(order =>
       
@@ -54,6 +54,7 @@ function Profile() {
        
             )}
           </ul>
+          <button className='checkout__Button' onClick={handleLogoff}>Log off</button>
         </div> :
         <div className='signin'>
         <p>Please sign in to view your profile.</p>

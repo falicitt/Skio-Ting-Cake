@@ -515,6 +515,7 @@ font-size: 1.1rem;
 /*styles for sign in*/
 .profile { 
   margin: 12vh 0 34vh 10vw;
+  text-align: center;
 }
 
 .signin {
