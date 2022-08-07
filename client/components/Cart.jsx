@@ -33,10 +33,9 @@ function Cart () {
           </div>
           <div className='header'>
             <div>Product</div>
-            <div>Price</div>
+            <div className='desktop'>Price</div>
             <div>Quantity</div>
-            <div>Total</div>
-            <div>Remove</div>
+            <div className='desktop'>Total</div>
           </div>
           <div>
             {cart.map((item) => (
@@ -44,11 +43,20 @@ function Cart () {
                 key={item.name}
                 className='item__Info'>
                 <div className='image'>
-                  <img src={item.image} alt={item.name} />
-                  {item.name}
+                  <img src={item.image} alt={item.name} />              
+                  <div className='name_container'>
+                    <div className='item_name'>{item.name}</div>
+                    <button
+                      className='delete'
+                      onClick={() => dispatch(deleteFromCart(item.id))}
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
 
-                <div>$ {item.price}</div>
+                <div className='desktop'>$ {item.price}</div>
+
                 <div className='buttons'>
                   <button onClick={() => dispatch(incrementQuantity(item.id))}>
                     +
@@ -61,20 +69,12 @@ function Cart () {
                   </button>
                 </div>
 
-                <div>$ {item.quantity * item.price}</div>
-                <div>
-                  <button
-                    className='delete_button'
-                    onClick={() => dispatch(deleteFromCart(item.id))}
-                  >
-                    x
-                  </button>
-                </div>
+                <div className='desktop'>$ {item.quantity * item.price}</div>
               </div>
             ))}
           </div>
           <div className='checkout__Session'>
-            <p>Total Price: $ {cart && getTotalPrice()}</p>
+            <p className='total_Price'>Total Price: $ {cart && getTotalPrice()}</p>
             {/* <Link href="/shipping" passHref> */}
             <button className='checkout__Button' onClick={submitCart}>Check-Out</button>
             {/* </Link> */}

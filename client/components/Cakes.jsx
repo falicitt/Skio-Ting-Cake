@@ -16,11 +16,8 @@ function Cakes () {
       .catch(err => console.log(err))
   }, [])
 
-  console.log('cakes', cakes)
 
   //sort cakes
-
-  
   const [sort, setSort] = useState('')
 
   if (sort === 'namePlus') {
@@ -97,7 +94,7 @@ function Cakes () {
               <Link to={`/cakes/${cake.id}`}>
               <div className='product__ColImg'>
                 <img src={cake.image} alt={cake.name} />
-                <p className='product__Col'>{cake.name}<div>VIEW CAKE  &gt;</div></p>
+                <div className='product__Col'>{cake.name}<div>VIEW CAKE  &gt;</div></div>
               </div>
               <p className='product__Col'>{cake.name}</p>
               </Link>
@@ -107,7 +104,7 @@ function Cakes () {
             <Link to={`/cakes/${cake.id}`}>
               <div className='product__ColImg'>
                 <img src={cake.image} alt={cake.name} />
-                <p className='product__Col'>{cake.name}<div>VIEW CAKE  &gt;</div></p>
+                <div className='product__Col'>{cake.name}<div>VIEW CAKE  &gt;</div></div>
               </div>
               <p className='product__Col'>{cake.name}</p>
               </Link>
