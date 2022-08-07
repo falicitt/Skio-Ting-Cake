@@ -270,9 +270,9 @@ button {
 }
   
 .product__Image img {
-    max-width: 400px;
+    /* max-width: 380px; */
     height: auto;
-    padding: 2rem 1rem 0 1rem;
+    /* padding: 2rem 1rem 0 1rem; */
   }
 
 .product__Description {
