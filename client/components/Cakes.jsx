@@ -74,14 +74,14 @@ function Cakes () {
       <h2 className='all__Cakes'>ALL CAKES</h2>
       <div className='productPage'>
         <div>
-          <button onClick={() => setSort('namePlus')}>Sort from A to Z</button>
-          <button onClick={() => setSort('nameMinus')}>Sort from Z to A</button>
+          <button className='button' onClick={() => setSort('namePlus')}>Sort from A to Z</button>
+          <button className='button'onClick={() => setSort('nameMinus')}>Sort from Z to A</button>
         </div>
         <form onSubmit={handleSearch}>
           <label htmlFor='search'>Search for a cake:</label>
           <input id='search' name='search' type='text' 
                 onChange={handleChange} />
-            <button>Search</button>
+            <button className='search_button'>Search</button>
             {searchResult? <button onClick={clearSearch}>Clear Search</button> : ''}
           
         </form>
