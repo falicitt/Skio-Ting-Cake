@@ -7,10 +7,12 @@ const router = express.Router()
 router.get('/', (req, res) => {
   db.getCakes()
     .then((results) => {
+      console.log('GET /api/v1/cakes called')
+      console.log('db results', results)
       return res.json({ cakes: results })
     })
     .catch((err) => {
-      console.log(err)
+      console.log('db error cake', err)
       res.status(500).json({ message: err.message })
     })
   return null
