@@ -8,3 +8,4 @@ server/public/styles.css.map
 .env
 tags
 .DS_Store
+server/.DS_Store
