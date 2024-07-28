@@ -44,7 +44,7 @@ function Home () {
         )}
       </ul>
 
-      <About />
+      {/* <About /> */}
     </>
   )
 }

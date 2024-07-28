@@ -7,24 +7,22 @@ import { useAuth0 } from '@auth0/auth0-react'
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 
 function Header () {
+//  for authentication
+  const { loginWithRedirect } = useAuth0()
 
-//for authentication
-const { loginWithRedirect } = useAuth0()
+  function handleRegister(e) {
+    e.preventDefault()
+    loginWithRedirect({
+      redirectUri: `${window.location.origin}/register`
+    })
+  }
 
+  function handleSignIn(e) {
+    e.preventDefault()
+    loginWithRedirect({redirectUri: `${window.location.origin}/`})
+  }
 
-function handleRegister(e) {
-  e.preventDefault()
-  loginWithRedirect({
-    redirectUri:`${window.location.origin}/register` 
-  })
-}
-
-function handleSignIn(e) {
-  e.preventDefault()
-  loginWithRedirect({redirectUri:`${window.location.origin}/`})
-}
-
-// for shopping cart function
+  // for shopping cart function
   const cart = useSelector((state) => state.cart)
 
   // console.log('cart', cart)
@@ -59,37 +57,37 @@ function handleSignIn(e) {
             <Link to={'/cakes'}>CAKES</Link>
           </li>
           <li>
-            <Link to={"/about"}>ABOUT</Link>
+            <Link to={'/about'}>ABOUT</Link>
           </li>
           <li>
-            <Link to={"/contact"}>CONTACT</Link>
+            <Link to={'/contact'}>CONTACT</Link>
           </li>
         </ul>
 
-      <div className='Title__Mobile'>
-          <Link to={"/"}>
+        <div className='Title__Mobile'>
+          <Link to={'/'}>
             SKIO TING CAKE
           </Link>
-      </div>
+        </div>
 
-      <a className='Nav__Icon' onClick={ToggleClass}>
-        <i className="fas fa-align-justify"></i>
-      </a>
+        <a className='Nav__Icon' onClick={ToggleClass}>
+          <i className="fas fa-align-justify"></i>
+        </a>
 
         <ul className={isActive ? 'Nav__Close' : 'Nav__Open'}>
-        <li>
+          <li>
             <Link to={'/'}>H O M E</Link>
-        </li>
-        <li>
+          </li>
+          <li>
             <Link to={'/cakes'}>C A K E S</Link>
-        </li>
-        <li>
+          </li>
+          <li>
             <Link to={'/about'}>A B O U T</Link>
-        </li>
-        <li>
+          </li>
+          <li>
             <Link to={'/contact'}>C O N T A C T</Link>
-        </li>
-      </ul>
+          </li>
+        </ul>
 
         {/* shopping cart */}
         <div className='cart'>
@@ -98,11 +96,11 @@ function handleSignIn(e) {
           </Link>
         </div>
         <div className='auth'>
-      
+
           <IfAuthenticated>
-            <Link to={'/profile'}> 
+            <Link to={'/profile'}>
               Profile
-             </Link>         
+            </Link>
           </IfAuthenticated>
           <IfNotAuthenticated>
             <a href="/" onClick={handleSignIn}>

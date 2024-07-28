@@ -18,7 +18,7 @@ export async function cacheUser(useAuth0) {
             email: user.email,
             token: token,
           }
-          return dispatch(setLoggedInUser(userToSave))
+          dispatch(setLoggedInUser(userToSave))
         } catch (err) {
           console.error(err)
         }
