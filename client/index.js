@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clientId={'StKsy7HlfX4xXSZLea8QjuAMtCfcpE0K'}
       redirectUri={window.location.origin}
       audience="https://skio-ting-cake/api"
-      >
+    >
       <Provider store={store}>
         <Router>
           <App />

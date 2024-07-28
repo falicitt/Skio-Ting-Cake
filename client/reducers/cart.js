@@ -1,7 +1,3 @@
-
-// import { ADD_TO_CART, DELETE_FROM_CART, UPDATE_CART } from '../actions/cart'
-// import { PLACE_ORDER_SUCCESS } from '../actions/orders'
-
 const initialCart = []
 
 const cartReducer = (state = initialCart, action) => {
@@ -14,10 +10,6 @@ const cartReducer = (state = initialCart, action) => {
 
       if (exists) {
         exists.quantity++
-        // return state.map((cake) => {
-        //   if (cake.id === payload.id) {
-        //     // return it with increased quantity
-        //     cake.quantity = cake.quantity + 1
         return [...state]
       } else {
         return [...state, { ...payload, quantity: 1 }]

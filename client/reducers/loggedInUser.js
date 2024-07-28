@@ -1,12 +1,12 @@
 import {
   SET_LOGGED_IN_USER,
-  CLEAR_LOGGED_IN_USER,
+  CLEAR_LOGGED_IN_USER
 } from '../actions/loggedInUser'
 
 const emptyUser = {
   auth0Id: '',
   email: '',
-  token: '',
+  token: ''
 }
 
 export default function user(state = emptyUser, action) {

@@ -3,40 +3,25 @@ import { setLoggedInUser } from './actions/loggedInUser'
 
 // eslint-disable-next-line no-unused-vars
 export async function cacheUser(useAuth0) {
-
   const dispatch = useDispatch()
 
   const loggedInUser = useSelector((state) => state.loggedInUser)
 
   const { getAccessTokenSilently, isAuthenticated, user } = useAuth0()
-  
+
   getAccessTokenSilently()
-  .then(token => {
-  if (isAuthenticated && !loggedInUser?.token) {
-    try {
-      const userToSave = {
-        auth0Id: user.sub,
-        email: user.email,
-        token: token,
+    .then(token => {
+      if (isAuthenticated && !loggedInUser?.token) {
+        try {
+          const userToSave = {
+            auth0Id: user.sub,
+            email: user.email,
+            token: token,
+          }
+          return dispatch(setLoggedInUser(userToSave))
+        } catch (err) {
+          console.error(err)
+        }
       }
-  
-      dispatch(setLoggedInUser(userToSave))
-} catch (err) { console.error(err)}
-  
-  // try {
-  //   const token = await getAccessTokenSilently()
-  //   if (isAuthenticated && !loggedInUser?.token) {
-  //       try {
-  //         const userToSave = {
-  //           auth0Id: user.sub,
-  //           email: user.email,
-  //           token: token,
-  //         }
-  //   console.log('userToSave' , userToSave)
-  //    dispatch(setLoggedInUser(userToSave))
-
-  // } catch(err) {console.log(err)}
-
-  }
-})
+  })
 }

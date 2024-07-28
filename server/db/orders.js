@@ -3,15 +3,15 @@ const connection = require('./connection')
 module.exports = {
   addOrder,
   getOrders,
-  getOrderByUser,
+  getOrderByUser
 }
 
-function addOrder(orderRequest, db = connection) {
+function addOrder (orderRequest, db = connection) {
   // remove item names from order (we have the id)
   orderRequest.cakePurchased = orderRequest.cakePurchased.map((item) => {
     return {
       id: item.id,
-      quantity: item.quantity,
+      quantity: item.quantity
     }
   })
   // getOrderIdAndQuantity(orderRequest.cakePurchased) //
@@ -39,14 +39,14 @@ function addOrder(orderRequest, db = connection) {
         pickup_date: orderRequest.date,
         pickup_time: orderRequest.time,
         shipping: orderRequest.shipping,
-        payment: orderRequest.payment,
+        payment: orderRequest.payment
       },
       'id'
     )
     .then((idArr) => {
       const id = idArr[0]
       console.log('insert id return: ', id)
-      addOrderLines(id, orderRequest.cakePurchased, db)
+      return addOrderLines(id, orderRequest.cakePurchased, db)
     })
 }
 
@@ -63,11 +63,11 @@ function addOrderLines(id, order, db = connection) {
     .then(() => null)
 }
 
-function getOrders(db = connection) {
+function getOrders (db = connection) {
   return db('orders').select()
 }
 
-function getOrderByUser(user, db = connection) {
+function getOrderByUser (user, db = connection) {
   return db('orders').where('add_by_user', user).select()
 }
 
