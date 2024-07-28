@@ -7,3 +7,4 @@ server/public/bundle.js.map
 server/public/styles.css.map
 .env
 tags
+.DS_Store
