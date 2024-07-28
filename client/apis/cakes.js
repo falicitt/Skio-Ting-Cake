@@ -8,4 +8,8 @@ export function getCakes () {
       console.log('api', res.body)
       return res.body.cakes
     })
+    .catch(err => {
+      console.error('Error fetching cakes:', err)
+      throw err // Rethrow the error if you want to handle it further up the chain
+    })
 }
